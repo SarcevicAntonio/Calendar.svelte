@@ -1,3 +1,22 @@
-<h1>Welcome to your library project</h1>
-<p>Create your package using @sveltejs/package and preview/showcase your work with SvelteKit</p>
-<p>Visit <a href="https://kit.svelte.dev">kit.svelte.dev</a> to read the documentation</p>
+<script>
+	import Calendar from '$lib';
+</script>
+
+<Calendar let:date let:is_today>
+	<div class:is_today>
+		{date}
+	</div>
+</Calendar>
+
+<style>
+	div {
+		border-radius: 99999px;
+		aspect-ratio: 1/1;
+		width: 1em;
+		margin: auto;
+	}
+	.is_today {
+		background-color: grey;
+		color: white;
+	}
+</style>

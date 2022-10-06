@@ -1,4 +1,4 @@
-# svalendar
+# Calendar.svelte
 
 ![Calendar view](./img.png)
 

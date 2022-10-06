@@ -2,6 +2,8 @@
 	import Calendar from '$lib';
 	import { isSameDay as is_same_day } from 'date-fns';
 
+	// the component doesn't care about data structure.
+	// it's your job to create the marking of days for example.
 	const data = [
 		{
 			date: new Date('2022-10-01'),

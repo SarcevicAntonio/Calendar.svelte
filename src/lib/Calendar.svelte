@@ -10,7 +10,7 @@
 	} from 'date-fns';
 
 	export let start_on_sunday = false;
-	let view_date = new Date();
+	export let view_date = new Date();
 	let today_date = new Date();
 
 	const WEEK_DAYS = ['M', 'D', 'M', 'D', 'F', 'S', 'S'];

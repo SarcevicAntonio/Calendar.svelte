@@ -2,7 +2,7 @@
 
 [![Calendar view](./img.png)](https://calendar-svelte.vercel.app/)
 
-This is a simple single Svelte component to help create a calendar view. It's not headless, but allows you to pass the date cell as a slot, for more flexibility of how and what each cell displays.
+This is a simple single Svelte component to help create a calendar month view. It's not headless, but allows you to pass the date cell as a slot, for more flexibility of how and what each cell displays.
 
 [View it in action!](https://calendar-svelte.vercel.app/)
 

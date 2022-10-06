@@ -28,6 +28,8 @@
 	];
 </script>
 
+<a href="https://github.com/SarcevicAntonio/Calendar.svelte"><h1>Calendar.svelte</h1></a>
+
 <Calendar let:date let:today>
 	{@const day = data.find((a) => is_same_day(a.date, date))}
 	<button

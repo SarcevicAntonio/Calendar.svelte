@@ -1,12 +1,12 @@
 <script>
 	import {
-		addMonths as add_months,
-		getDate as get_date,
-		getDay as get_week_day,
-		getDaysInMonth as get_days_in_month,
-		isSameMonth as is_same_month,
-		isSameYear as is_same_year,
-		setDate as set_date
+		addMonths,
+		getDate,
+		getDay,
+		getDaysInMonth,
+		isSameMonth,
+		isSameYear,
+		setDate
 	} from 'date-fns';
 
 	export let start_on_sunday = false;
@@ -14,8 +14,8 @@
 	let today_date = new Date();
 
 	const WEEK_DAYS = ['M', 'D', 'M', 'D', 'F', 'S', 'S'];
-	const set_next_month = () => (view_date = add_months(view_date, 1));
-	const set_prev_month = () => (view_date = add_months(view_date, -1));
+	const set_next_month = () => (view_date = addMonths(view_date, 1));
+	const set_prev_month = () => (view_date = addMonths(view_date, -1));
 	const set_today = () => (view_date = new Date(today_date));
 
 	if (start_on_sunday) {
@@ -25,10 +25,10 @@
 
 	$: view_month_string = view_date.toLocaleDateString(undefined, { month: 'long' });
 	$: view_year_string = view_date.toLocaleDateString(undefined, { year: 'numeric' });
-	$: view_is_different_year = !is_same_year(view_date, today_date);
-	$: view_is_same_month = is_same_month(view_date, today_date);
-	$: days_in_month = get_days_in_month(view_date);
-	$: first_week_day = get_week_day(set_date(view_date, 1)) || (start_on_sunday ? 0 : 7);
+	$: view_is_different_year = !isSameYear(view_date, today_date);
+	$: view_is_same_month = isSameMonth(view_date, today_date);
+	$: days_in_month = getDaysInMonth(view_date);
+	$: first_week_day = getDay(setDate(view_date, 1)) || (start_on_sunday ? 0 : 7);
 </script>
 
 <div class="header">
@@ -56,8 +56,8 @@
 		<div class="cell" />
 	{/each}
 	{#each Array(days_in_month) as _, i}
-		{@const date = set_date(view_date, i + 1)}
-		{@const today = view_is_same_month ? get_date(today_date) === i + 1 : false}
+		{@const date = setDate(view_date, i + 1)}
+		{@const today = view_is_same_month ? getDate(today_date) === i + 1 : false}
 		<div class="cell">
 			<slot {date} {today}>
 				{date.toLocaleDateString(undefined, { day: 'numeric' })}

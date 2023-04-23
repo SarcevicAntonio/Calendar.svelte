@@ -1,6 +1,6 @@
 <script>
 	import Calendar from '$lib';
-	import { isSameDay as is_same_day } from 'date-fns';
+	import { isSameDay } from 'date-fns';
 
 	// the component doesn't care about data structure.
 	// it's your job to create the marking of days for example.
@@ -31,7 +31,7 @@
 <a href="https://github.com/SarcevicAntonio/Calendar.svelte"><h1>Calendar.svelte</h1></a>
 
 <Calendar let:date let:today>
-	{@const day = data.find((a) => is_same_day(a.date, date))}
+	{@const day = data.find((a) => isSameDay(a.date, date))}
 	<button
 		on:click={() =>
 			alert(

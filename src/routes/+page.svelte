@@ -1,28 +1,24 @@
 <script>
 	import Calendar from '$lib';
-	import { isSameDay } from 'date-fns';
+	import { isSameDay, setDate } from 'date-fns';
 
 	// the component doesn't care about data structure.
 	// it's your job to create the marking of days for example.
 	const data = [
 		{
-			date: new Date('2022-10-01'),
+			date: setDate(new Date(), 1),
 			color: '#F44336'
 		},
 		{
-			date: new Date('2022-10-02'),
+			date: setDate(new Date(), 2),
 			color: '#F44336'
 		},
 		{
-			date: new Date('2022-10-03'),
+			date: setDate(new Date(), 3),
 			color: '#F44336'
 		},
 		{
-			date: new Date('2022-10-20'),
-			color: '#8BC34A'
-		},
-		{
-			date: new Date('2022-11-20'),
+			date: setDate(new Date(), 20),
 			color: '#8BC34A'
 		}
 	];
